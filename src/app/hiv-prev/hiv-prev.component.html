@@ -1,0 +1,83 @@
+<div id="page">
+ <app-nav></app-nav>
+      
+ 
+    
+  
+  
+  <div id="colorlib-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 animate-box">
+          <!-- <div class="row">
+            <div class="col-md-6"> -->
+              <h2>Patient Info </h2>
+              <form  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
+                <div class="row form-group">
+                  <div class="col-md-6">
+                    <label for="ZipCode">Zip Code</label>
+                    <input type="text" id="ZipCode" class="form-control mb" name="ZipCode"   [(ngModel)]="model.ZipCode" #ZipCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ZipCode.invalid }" required placeholder="Zip Code">
+                    <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                        <div *ngIf="ZipCode.errors.required" class="font-color">Zip Codeis required</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="AgeRange">Age Range</label>
+                      <select class="form-control" id="AgeRange">
+                        <option value="13to24">13to24</option>
+                        <option value="25to44">25to44</option>
+                        <option value="45to59">45to59</option>
+                        <option value="60plus">60plus</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-6">
+                    <label for="races">Races</label>
+                    <input type="text" id="races" class="form-control mb" name="races"   [(ngModel)]="model.races" #races="ngModel" [ngClass]="{ 'is-invalid': f.submitted && races.invalid }" required placeholder="Races">
+                    <div *ngIf="f.submitted && races.invalid" class="invalid-feedback">
+                        <div *ngIf="races.errors.required" class="font-color">races required</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="IncomeTract">Income Tract</label>
+                        <select class="form-control" id="IncomeTract">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-6">
+                      <label for="races">Sex</label>
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" checked>Male
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio">Female
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio">Other
+                          </label>
+                        </div>
+                    </div>
+                  
+                </div>
+  
+                <div class="form-group text-center">
+                  <input type="submit" value="Search" class="btn btn-primary" (click)="redirect()">
+                  <input type="submit" value="Clear" class="btn btn-danger">
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
